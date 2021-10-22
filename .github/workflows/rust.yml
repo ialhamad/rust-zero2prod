@@ -64,10 +64,10 @@ jobs:
       #   run: |
       #     sudo apt-get install libpq-dev -y
       #     SKIP_DOCKER=true ./scripts/init_db.sh
-      # - name: Run cargo test
-      #   uses: actions-rs/cargo@v1
-      #   with:
-      #     command: test
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
 
   fmt:
     name: Rustfmt
