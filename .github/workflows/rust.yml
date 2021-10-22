@@ -49,7 +49,7 @@ jobs:
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
 
       - name: Install sqlx-cli 
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@1.56.0
         if: steps.cache-sqlx.outputs.cache-hit == false
         with:
           command: install 
@@ -65,7 +65,7 @@ jobs:
           sudo apt-get install libpq-dev -y
           SKIP_DOCKER=true ./scripts/init_db.sh
       - name: Run cargo test
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@1.56.0
         with:
           command: test
 
@@ -79,7 +79,7 @@ jobs:
           toolchain: stable
           override: true
           components: rustfmt
-      - uses: actions-rs/cargo@v1
+      - uses: actions-rs/cargo@1.56.0
         with:
           command: fmt
           args: --all -- --check
@@ -119,7 +119,7 @@ jobs:
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
 
       - name: Install sqlx-cli 
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@1.56.0
         if: steps.cache-sqlx.outputs.cache-hit == false
         with:
           command: install 
@@ -174,7 +174,7 @@ jobs:
           key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
 
       - name: Install sqlx-cli 
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@1.56.0
         if: steps.cache-sqlx.outputs.cache-hit == false
         with:
           command: install 
